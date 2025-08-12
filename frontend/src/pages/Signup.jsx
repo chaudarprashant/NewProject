@@ -11,7 +11,7 @@ function Signup() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', data);
+      await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, data);
       alert("Registered successfully");
       navigate('/login'); // 👈 navigate to login after signup
     } catch (err) {
