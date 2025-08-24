@@ -20,29 +20,37 @@ function Signup() {
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 bg-light"
-      style={{ 
-        background: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)" 
+    <div
+      className="container-fluid d-flex justify-content-center align-items-center min-vh-100"
+      style={{
+        backgroundColor: "#f0f4ff", // 👈 soft background color
       }}
     >
       <div
-        className="card p-4 shadow-lg border-0"
+        className="card p-4 border-0"
         style={{
           width: "100%",
           maxWidth: "420px",
-          borderRadius: "20px",
-          background: "white",
+          borderRadius: "18px",
+          background: "#ffffff",
+          boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.15)", // 👈 card shadow
         }}
       >
-        <h2 className="text-center mb-4 fw-bold" style={{ color: "#2575fc" }}>
-          Create Account
+        <h2
+          className="text-center mb-4 fw-bold"
+          style={{
+            color: "#1e3a8a", // deep blue heading
+            textShadow: "1px 1px 3px rgba(0,0,0,0.1)", // 👈 subtle text shadow
+          }}
+        >
+          Signup
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label fw-semibold">Name</label>
             <input
               name="name"
-              className="form-control rounded-pill px-3 py-2"
+              className="form-control rounded-3 px-3 py-2 shadow-sm"
               placeholder="Enter name"
               onChange={handleChange}
               required
@@ -53,7 +61,7 @@ function Signup() {
             <input
               name="email"
               type="email"
-              className="form-control rounded-pill px-3 py-2"
+              className="form-control rounded-3 px-3 py-2 shadow-sm"
               placeholder="Enter email"
               onChange={handleChange}
               required
@@ -64,7 +72,7 @@ function Signup() {
             <input
               name="password"
               type="password"
-              className="form-control rounded-pill px-3 py-2"
+              className="form-control rounded-3 px-3 py-2 shadow-sm"
               placeholder="Enter password"
               onChange={handleChange}
               required
@@ -72,11 +80,11 @@ function Signup() {
           </div>
           <button
             type="submit"
-            className="btn w-100 rounded-pill py-2 fw-semibold"
+            className="btn w-100 rounded-3 py-2 fw-semibold"
             style={{
-              background: "linear-gradient(90deg, #6a11cb, #2575fc)",
+              background: "#1e3a8a",
               color: "white",
-              border: "none",
+              boxShadow: "0px 4px 12px rgba(30,58,138,0.4)", // 👈 button shadow
             }}
           >
             Signup
@@ -84,7 +92,7 @@ function Signup() {
         </form>
         <p className="mt-3 text-center">
           Already have an account?{" "}
-          <Link to="/login" className="fw-semibold" style={{ color: "#6a11cb" }}>
+          <Link to="/login" className="fw-semibold" style={{ color: "#1e3a8a" }}>
             Login here
           </Link>
         </p>
