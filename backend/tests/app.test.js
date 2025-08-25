@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require('../index'); // Your Express app
+import request from "supertest";
+import app from "../server.js";   // ✅ now works
 
 describe("GET /api/health", () => {
   it("should return 200 OK", async () => {
