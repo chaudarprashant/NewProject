@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../server.js";   // ✅ now works
+import app from "../app.js";  // Import Express app, not server.js
 
 describe("GET /api/health", () => {
   it("should return 200 OK", async () => {

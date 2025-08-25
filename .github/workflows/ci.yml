@@ -29,7 +29,7 @@ jobs:
 
       - name: Run backend tests
         working-directory: ./backend
-        run: npm test -- --watchAll=false
+        run: npm test   # ✅ no extra flags for Jest
 
       # --- Frontend ---
       - name: Install frontend dependencies
@@ -38,7 +38,8 @@ jobs:
 
       - name: Run frontend tests
         working-directory: ./frontend
-        run: npm test -- --watchAll=false
+        run: npm test -- --watchAll=false   # ✅ CRA only
+        # run: npm run test                 # ✅ If using Vite + Vitest
 
       - name: Build frontend
         working-directory: ./frontend
