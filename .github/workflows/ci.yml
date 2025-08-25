@@ -22,18 +22,24 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install server dependencies
+      # --- Backend ---
+      - name: Install backend dependencies
         working-directory: ./backend
         run: npm install
 
-      - name: Run server tests
+      - name: Run backend tests
         working-directory: ./backend
-        run: npm test --if-present
+        run: npm test -- --watchAll=false
 
-      - name: Install client dependencies
+      # --- Frontend ---
+      - name: Install frontend dependencies
         working-directory: ./frontend
         run: npm install
 
-      - name: Run client build
+      - name: Run frontend tests
+        working-directory: ./frontend
+        run: npm test -- --watchAll=false
+
+      - name: Build frontend
         working-directory: ./frontend
         run: npm run build
